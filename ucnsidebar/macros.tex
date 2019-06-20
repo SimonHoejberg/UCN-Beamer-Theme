@@ -1,0 +1,10 @@
+\newcommand{\fig}[2][]{
+\begin{figure}[H]
+\begin{center}
+  \ifthenelse{\equal{#1}{}}
+  {\includegraphics[keepaspectratio=true,width=\textwidth]{figures/#2}}
+  {\includegraphics[keepaspectratio=true,scale=#1]{figures/#2}}
+  \label{#2}
+\end{center}
+\end{figure}
+}

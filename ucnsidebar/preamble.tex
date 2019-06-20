@@ -1,0 +1,140 @@
+\documentclass[aspectratio=1610]{beamer}
+\usetheme[
+%%% options passed to the outer theme
+%    hidetitle,           % hide the (short) title in the sidebar
+%    hideauthor,          % hide the (short) author in the sidebar
+%    hideinstitute,       % hide the (short) institute in the bottom of the sidebar
+%    shownavsym,          % show the navigation symbols
+%    width=2cm,           % width of the sidebar (default is 2 cm)
+%    hideothersubsections,% hide all subsections but the subsections in the current section
+%    hideallsubsections,  % hide all subsections
+    left               % right of left position of sidebar (default is right)
+%%% options passed to the color theme
+%    lightheaderbg,       % use a light header background
+  ]{UCNSidebar}
+
+\usepackage{listings}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{bluekeywords}{rgb}{0.13,0.13,1}
+\definecolor{redstring}{rgb}{0.6,0,0}
+\definecolor{javaKeywords}{HTML}{7F0055}
+\definecolor{diff}{HTML}{c5c5c5}
+\definecolor{bluekeywords}{rgb}{0.13,0.13,1}
+\definecolor{greencomments}{rgb}{0,0.5,0}
+\definecolor{redstrings}{rgb}{0.9,0,0}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstdefinestyle{CSharp}{
+  language=[Sharp]C,
+  frame=ltrb,
+  framesep=5pt,
+  captionpos=b,
+  showspaces=false,
+  showtabs=false,
+  breaklines=true,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  escapeinside={(*@}{@*)},
+  commentstyle=\color{greencomments},
+  morekeywords={partial, var, value, get, set, async, await},
+  basicstyle=\linespread{0.9}\ttfamily\tiny,
+  keywordstyle=\color{bluekeywords},
+  stringstyle=\color{redstrings}
+  }
+
+\lstdefinestyle{sql}{
+  language=SQL,
+  frame=ltrb,
+  framesep=5pt,
+  basicstyle=\linespread{0.9}\ttfamily\tiny,
+  keywordstyle=\ttfamily\color{bluekeywords},
+  identifierstyle=\ttfamily, 
+  stringstyle=\ttfamily,
+  breaklines=true,
+  commentstyle=\ttfamily\color{greencomments}\tiny,
+  morekeywords= {LANGUAGE, BEGIN, RETURN, RETURNS, FUNCTION, IF, REPLACE},
+  captionpos=b,
+  morekeywords={TEXT, BIGINT}
+  }
+
+  \lstdefinestyle{xml}{
+  basicstyle=\linespread{0.9}\ttfamily\tiny,
+  language=XML,
+  frame=ltrb,
+  framesep=5pt,
+  showstringspaces=false,         % how far the line-numbers are from the code
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+  tabsize=2,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                   % show the filename of files included with \lstinputlisting;
+                                  % also try caption instead of title  
+  commentstyle=\color{gray}\upshape
+}
+
+\lstdefinelanguage{XML}
+{
+  morestring=[s][\color{mauve}]{"}{"},
+  morestring=[s][\color{black}]{>}{<},
+  morecomment=[s]{<?}{?>},
+  morecomment=[s][\color{greencomments}]{<!--}{-->},
+  stringstyle=\color{black},
+  identifierstyle=\color{bluekeywords},
+  keywordstyle=\color{red},
+  morekeywords={xmlns,xsi,noNamespaceSchemaLocation,type,id,x,y,source,target,version,tool,transRef,roleRef,objective,eventually}% list your attributes here
+}
+
+\usepackage[utf8]{inputenc}
+\usepackage[danish]{babel}
+\usepackage[T1]{fontenc}
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+\usepackage{helvet}
+
+\usepackage{ifthen}
+
+
+% colored hyperlinks
+\newcommand{\chref}[2]{%
+  \href{#1}{{\usebeamercolor[bg]{UCNSidebar}#2}}%
+}
+
+\title[]% optional, use only with long paper titles
+{Partify}
+
+% \subtitle{}  % could also be a conference name
+
+\date{17. juni 2019}
+
+\author[] % optional, use only with lots of authors
+{Simon Højberg}
+% - Give the names in the same order as they appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation. See the beamer manual for an example
+
+\institute[
+%  {\includegraphics[scale=0.2]{aau_segl}}\\ %insert a company, department or university logo
+] % optional - is placed in the bottom of the sidebar on every slide
+{% is placed on the title page
+  
+  % IT-Uddannelserne\\
+  % Professionshøjskolen UCN \\
+  
+  %there must be an empty line above this line - otherwise some unwanted space is added between the university and the country (I do not know why;( )
+}
+
+
+% specify a logo on the titlepage (you can specify additional logos an include them in
+% institute command below
+\pgfdeclareimage[height=.75cm]{titlepagelogo}{UCNGraphics/UCN-Logo-Venstre} % placed on the title page
+%\pgfdeclareimage[height=1.5cm]{titlepagelogo2}{graphics/aau_logo_new} % placed on the title page
+\titlegraphic{% is placed on the bottom of the title page
+  \pgfuseimage{titlepagelogo}
+%  \hspace{1cm}\pgfuseimage{titlepagelogo2}
+}

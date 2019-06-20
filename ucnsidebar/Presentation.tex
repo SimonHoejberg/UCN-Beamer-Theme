@@ -1,0 +1,38 @@
+
+\input{preamble.tex}
+\input{macros.tex}
+% If you want to change the colors of the various elements in the theme, edit and uncomment the following lines
+% Change the bar and sidebar colors:
+%\setbeamercolor{AAUsidebar}{fg=red!20,bg=red}
+%\setbeamercolor{sidebar}{bg=red!20}
+% Change the color of the structural elements:
+%\setbeamercolor{structure}{fg=red}
+% Change the frame title text color:
+%\setbeamercolor{frametitle}{fg=blue}
+% Change the normal text color background:
+%\setbeamercolor{normal text}{bg=gray!10}
+% ... and you can of course change a lot more - see the beamer user manual.
+\begin{document}
+% the titlepage
+{\setbeamercolor{background canvas}{bg=beamer@headercolor}
+\begin{frame}[plain,noframenumbering] % the plain option removes the sidebar and header from the title page
+  \titlepage
+\end{frame}}
+%%%%%%%%%%%%%%%%
+\section{Agenda}
+% TOC
+\begin{frame}{Agenda}
+\tableofcontents
+\end{frame}
+%%%%%%%%%%%%%%%%
+
+\input{Slides.tex}
+
+%%%%%%%%%%%%%%%%
+%Final Frame
+\begin{frame}[plain,noframenumbering]
+  \finalpage{Tak!}
+\end{frame}
+%%%%%%%%%%%%%%%%
+
+\end{document}
